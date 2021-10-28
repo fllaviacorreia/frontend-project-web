@@ -1,13 +1,14 @@
-import {useState} from 'react';
-import User from  './pages/Users';
+import React from "react";
 
 function App() {
-
   return (
     <div className="App">
-      <User/>
+      <h1>App React</h1>
     </div>
   );
 }
 
 export default App;
+
+
+
