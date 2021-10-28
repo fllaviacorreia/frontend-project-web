@@ -1,9 +1,10 @@
 import React from "react";
+import User from  './pages/Users/users';
 
 function App() {
   return (
     <div className="App">
-      <h1>App React</h1>
+      <User/>
     </div>
   );
 }
