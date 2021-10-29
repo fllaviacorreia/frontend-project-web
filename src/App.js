@@ -1,10 +1,10 @@
 import React from "react";
-import User from  './pages/Users/users';
+import Routes from  './routes';
 
 function App() {
   return (
     <div className="App">
-      <User/>
+      <Routes/>
     </div>
   );
 }

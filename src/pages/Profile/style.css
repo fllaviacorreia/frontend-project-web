@@ -1,4 +1,10 @@
-#user-container h1 {
+#profile-container {
+    max-width: 900px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
+#profile-container h1 {
     margin-top: 10px;
     color: #da552f;
     display: flex;
@@ -6,33 +12,21 @@
     align-items: center;
 }
 
-.user-list {
-    max-width: 700px;
-    margin: 20px auto 0;
-    padding: 0 20px;
-    list-style: none;
-}
-
-.user-list li {
+#proofile-container form input {
+    width: 400px;
+    font-size: 16px;
+    display: flex;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 20px;
-}
-
-.user-list li p {
-    font-size: 16px;
-    color: #999;
-    margin-top: 5px;
-    line-height: 24px;
 }
 
 .button {
     height: 30px;
     width: 80px;
     border-radius: 5px;
-    text-decoration: none;
     border: 2px solid #da552f;
     background: none;
     margin-top: 10px;
@@ -56,6 +50,4 @@
     padding: 10px;
 }
 
-#create-link {
-    margin: 50px;
-}
+
