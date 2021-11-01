@@ -6,7 +6,7 @@ import api from '../../services/api';
 export default function Profile(){
 	const {id} = useParams();
 	const history = useHistory();
-	
+
 	//criação de usuário vazio
 	const initUser={
 		name: '',
@@ -45,10 +45,6 @@ export default function Profile(){
 		console.log(user);
 	}
 
-	
-
-	
-
 	return(
 		<div id = "profile-container">
 			<h1>Cadastro</h1>
@@ -63,7 +59,7 @@ export default function Profile(){
 				<input name = "empresa" onChange = {onChange} value = {user.empresa}/>
 				
 				<div className = "actions">
-	                <Link className = "button" onClick = {() => history.push('/')}>Voltar</Link>
+	                <Link className = "button" to ='/'>Voltar</Link>
 	                <button className = "button" type = "submit">Salvar</button>
 				</div>
 				
@@ -71,3 +67,4 @@ export default function Profile(){
 		</div>
 	);
 }
+
