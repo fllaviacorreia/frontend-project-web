@@ -14,7 +14,7 @@ export default function User(){
     async function handleDelete(id){
         try{
             await api.delete(`/users/${id}`);
-            setUsers(users.filter(user => user.id != id));
+            setUsers(users.filter(user => user.id !== id));
         }catch(err){
             alert("Erro ao deletar!");
         }

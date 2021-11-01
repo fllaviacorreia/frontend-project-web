@@ -7,7 +7,7 @@ export default function Profile(){
 	const {id} = useParams();
 	const history = useHistory();
 	
-	//criação de usuários
+	//criação de usuário vazio
 	const initUser={
 		name: '',
 		email: '',
@@ -17,6 +17,27 @@ export default function Profile(){
 
 	const [user, setUser] = useState(initUser);
 	
+	//get para alteração de usuários
+	useEffect(() => {
+		if(id) {
+			api.get(`/users/${id}`).then(response => {
+				setUser(...response.data);
+			});
+		}
+	}, []);
+
+	function onSubmit(ev){
+		ev.preventDefault(); //pagina não regarrega novamente
+
+        //definindo se é create ou update para o método e url
+		const method = id ? 'put' : 'post';
+		const url = id	?  `users/${id}`  : '/users';
+
+		api[method](url, user).then((response) =>{
+			history.push('/');
+		});
+	}
+
     //mudando valores [create/update]
 	function onChange(ev){
 		const {name, value} = ev.target;
@@ -24,26 +45,9 @@ export default function Profile(){
 		console.log(user);
 	}
 
-	//get para alteração de usuários
-	useEffect(() => {
-		if(id) {
-			api.get(` /users/id`).then(response => {
-				setUser(...response.data);
-			});
-		}
-	}, []);
+	
 
-	function onSubmit(ev){
-		ev.preventDefault();
-
-        //definindo se é create ou update para o método e url
-		const method = id ? 'put' : 'post';
-		const url = id	?  `users/${id}`  : 'users';
-
-		api[method](url, user).then((response) =>{
-			history.push('/');
-		});
-	}
+	
 
 	return(
 		<div id = "profile-container">
@@ -67,7 +71,3 @@ export default function Profile(){
 		</div>
 	);
 }
-
-
-
-

@@ -16,6 +16,7 @@
     width: 400px;
     font-size: 16px;
     display: flex;
+    justify-content: center;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
